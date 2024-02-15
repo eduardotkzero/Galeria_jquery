@@ -1,13 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pratique</title>
+    <link rel="stylesheet" href="./main.css" />
 </head>
 <body>
-    
-
-    <script src="script.js"></script>
+    <div class="container">
+        <h1>Contador</h1>
+        <h2>Modulo 7</h2>
+        <form id="form-deposito">
+            <input type="number" id="campo-A" required placeholder="Digite um número de 1 a 10" min="1" max="10" />
+            <input type="number" id="campo-B" required placeholder="Digite um número de 1 a 10 e que seja maior que o anterior" min="1" max="10" />
+            <p class="error-message"></p>
+            <textarea placeholder="Descrição (opcional)"></textarea>
+            <button id="submit" type="submit">Concluir</button>
+        </form>
+        <p class="success-message"></p>
+    </div>
+    <script src="./main.js"></script>
 </body>
 </html>
