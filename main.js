@@ -1,47 +1,25 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('form-deposito');
-    const campoA = document.getElementById('campo-A');
-    const campoB = document.getElementById('campo-B');
-    const errorMessage = document.querySelector('.error-message');
-    const successMessage = document.querySelector('.success-message');
+const form = document.getElementById('form-contato');
+let linhas = '';
 
-    form.addEventListener('submit', function (event) {
-        event.preventDefault();
+ 
 
-        errorMessage.style.display = 'none';
-        successMessage.style.display = 'none';
 
-        if (campoA.value === '' || campoB.value === '') {
-            errorMessage.innerText = 'Preencha este campo.';
-            errorMessage.style.display = 'block';
-            return;
-        }
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-        const numA = parseInt(campoA.value);
-        const numB = parseInt(campoB.value);
+    const inputNome= document.getElementById ('input-nome')
+    const inputTelefone= document.getElementById ('input-telefone')
+    
+    
+    let linha = `<tr>`
+    linha += `<td>${inputNome.value}</td>`;
+    linha += `<td>${inputTelefone.value}</td>`;
+    linha += `</tr>`;
+    linhas += linha;
+    linhas += '';
+   
+    const corpoTabela = document.querySelector('tbody');
+    corpoTabela.innerHTML = linhas;
 
-        if (numA < 0 || numA > 8) {
-            errorMessage.style.display = 'block';
-            return;
-        }
-
-        if (numB < 1 || numB > 9 || numB <= numA) {
-            errorMessage.innerText = 'O número do campo B deve ser maior que o número do campo A.';
-            errorMessage.style.display = 'block';
-            return;
-        }
-
-        successMessage.innerText = 'Parabéns! Está correto.';
-        successMessage.style.display = 'block';
-    });
-
-    campoA.addEventListener('input', function () {
-        successMessage.style.display = 'none';
-        errorMessage.style.display = 'none'; 
-    });
-
-    campoB.addEventListener('input', function () {
-        successMessage.style.display = 'none';
-        errorMessage.style.display = 'none'; 
-    });
-});
+    
+})
