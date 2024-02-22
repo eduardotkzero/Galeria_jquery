@@ -1,76 +1,86 @@
-* {
+*{
+    margin: o;
     padding: 0;
-    margin: 0;
     box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
-}
-
-body {
-    background-color: #E7E7E7;
-    padding: 50px;
-}
-
-.container {
-    max-width: 960px;
-    width: 100%;
-    margin: 0 auto;
+    font-family: Roboto, sans-serif;
 }
 
 header {
-}
-
-header h2, img{
+    background-color: #5f27cd;
+    padding: 16px 0;
+    color: #fff;
     display: flex;
-    height: 40px;
-    align-items: center;
+    border-bottom: 16px solid #341f97;
+    justify-content: center;
+    text-transform: uppercase;
+    font-style: italic;
 }
 
-header img {
-    height: 230px;
-    margin-right: 18px;
+header button {
+    margin-left: 16px;
 }
 
 form {
-    display: flex;
-    justify-content: space-between;
-    max-width: 700px;
-    width: 100%;
-    margin-bottom: 18px;
+    background-color: #c8d6e5;
+    padding: 24px 0;
+    text-align: center;
+    display: none;
 }
 
-form input {
-    font-size: 24px;
-    background-color: #fff;
-    border: none;
-    border-bottom: 2px solid blue;
+form h2 {
+    margin-bottom: 16px;;
+}
+
+input, button {
     padding: 8px;
 }
 
-form button {
+button {
     background-color: #009432;
-    color: #fff;
-    font-size: 24px;
-    font-weight: bold;
     border: none;
     cursor: pointer;
-    padding: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
 }
 
-table {
-    max-width: 700px;
+#botao-cancelar {
+    background-color: red;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul li {
+    max-width: 25%;
+    list-style: none;
+    position: relative;
+    max-height: 280px;
+    overflow-y: hidden;
+}
+
+ul li img{
     width: 100%;
-    justify-content: space-between;
 }
 
- thead tr th{
-    border-bottom: 2px solid #000;
-    font-size: 21px;
+.overlay-imagem-link {
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: all ease .5s;
 }
 
-table td {
-    text-align: center;
-    font-size: 18px;
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.6)
+.overlay-imagem-link a {
+    color: #fff;
+    text-decoration: none;
 }
 
+ul li:hover .overlay-imagem-link {
+    opacity: 1;
+}
